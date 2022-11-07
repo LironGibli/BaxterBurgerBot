@@ -2,7 +2,7 @@
 <launch>
 
 	<!-- arguments -->
-	<arg name="domain_path"	default="$(find baxter_burger_bot)/pddl/domain_baxter_burger_bot.pddl" />
+	<arg name="domain_path"	default="$(find BaxterBurgerBot)/pddl/domain_baxter_burger_bot.pddl" />
 	<arg name="problem_path"	default="$(find baxter_burger_bot)/pddl/problem_baxter_burger_bot.pddl" />
 
 	<!-- knowledge base -->

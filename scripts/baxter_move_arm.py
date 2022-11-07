@@ -5,17 +5,17 @@ import rospy
 from baxter_interface import CHECK_VERSION
 
 
-def pick(pos):
-    os.system(f"python joint_trajectory_file_playback.py -l 1 -f pick_{pos}.csv")
+def pick(food, pos):
+    os.system(f"rosrun baxter_examples joint_position_file_playback.py -l 1 -f pick_{food}_{pos}")
 
-def put(pos):
-    os.system(f"python joint_trajectory_file_playback.py -l 1 -f put_{pos}.csv")
+def put(food, pos):
+    os.system(f"rosrun baxter_examples joint_position_file_playback.py -l 1 -f put_{food}_{pos}")
 
 def flip(grill):
-    os.system(f"python joint_trajectory_file_playback.py -l 1 -f flip_{grill}.csv")
+    os.system(f"rosrun baxter_examples joint_position_file_playback.py -l 1 -f flip_{grill}")
 
-def put_cheese(grill):
-    os.system(f"python joint_trajectory_file_playback.py -l 1 -f put_cheese_{grill}.csv")
+#def put_cheese(grill):
+#    os.system(f"python joint_position_file_playback.py -l 1 -f put_cheese_{grill}.csv")
 
 
 def main():

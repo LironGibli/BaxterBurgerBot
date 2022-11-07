@@ -54,20 +54,4 @@
     (is_flipped ?b)
     )
     )
-    
-    (:action put_cheese
-    :parameters (?a - arm ?b - burger ?g - grill ?c - cheese)
-    :precondition 
-    (and 
-    (arm_holds_food ?a ?c)
-    (on ?g ?b)
-    (is_flipped ?b)
-    )
-    :effect 
-    (and
-    (arm_is_free ?a)
-    (not (arm_holds_food ?a ?c))
-    (on ?b ?c)
-    )
-    )
 )

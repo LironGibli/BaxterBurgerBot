@@ -26,14 +26,18 @@ def callback(msg):
         for p in msg.parameters:
             if p.key == "p":
                 pos = p.value
-        baxter_move_arm.pick(pos)
+	    if p.key == "f":
+	    	food = p.value
+        baxter_move_arm.pick(food, pos)
 
  
     if msg.name == "put":
         for p in msg.parameters:
             if p.key == "p":
                 pos = p.value
-        baxter_move_arm.put(pos)
+	    if p.key == "f":
+	    	food = p.value
+        baxter_move_arm.put(food, pos)
 
 
     if msg.name == "flip":
@@ -43,11 +47,11 @@ def callback(msg):
         baxter_move_arm.flip(grill)
     
     
-    if msg.name == "put_cheese":
-        for p in msg.parameters:
-            if p.key == "g":
-                grill = p.value
-        baxter_move_arm.put_cheese(grill)
+#    if msg.name == "put_cheese":
+#        for p in msg.parameters:
+#            if p.key == "g":
+#                grill = p.value
+#        baxter_move_arm.put_cheese(grill)
     
 
     fb = rosplan_dispatch_msgs.msg.ActionFeedback()
